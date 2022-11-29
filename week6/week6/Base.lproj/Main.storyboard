@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="week6" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="현재 시간" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ae6-zv-Hme">
+                                <rect key="frame" x="20" y="61" width="374" height="21"/>
+                                <color key="backgroundColor" red="0.77376923589864099" green="1" blue="0.98535494769360898" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="gNy-Cn-uuB"/>
+                                    <constraint firstAttribute="height" constant="21" id="syS-C6-rDj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="알람 시간" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OkI-tG-mKR">
+                                <rect key="frame" x="20" y="809" width="374" height="21"/>
+                                <color key="backgroundColor" red="1" green="0.86299080689213348" blue="0.79777086138973186" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="TP2-wQ-rFr"/>
+                                    <constraint firstAttribute="width" constant="374" id="UCF-72-xOn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="UAv-MC-qHg" appends="YES" id="YPj-fX-K9y"/>
+                                </connections>
+                            </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="eH7-mU-zU5">
+                                <rect key="frame" x="-2" y="347" width="320" height="216"/>
+                                <connections>
+                                    <action selector="changeDatePicker:" destination="BYZ-38-t0r" eventType="valueChanged" id="MFC-Rx-NDn"/>
+                                </connections>
+                            </datePicker>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ae6-zv-Hme" secondAttribute="trailing" constant="20" id="1oS-tG-iib"/>
+                            <constraint firstItem="OkI-tG-mKR" firstAttribute="top" secondItem="eH7-mU-zU5" secondAttribute="bottom" constant="246" id="3L5-uN-QGW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OkI-tG-mKR" secondAttribute="trailing" constant="20" id="45b-da-Y3X"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eH7-mU-zU5" secondAttribute="trailing" constant="96" id="M6N-b5-Pmm"/>
+                            <constraint firstItem="ae6-zv-Hme" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="NXY-6E-MPF"/>
+                            <constraint firstItem="ae6-zv-Hme" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="17" id="XbU-dg-VMF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="OkI-tG-mKR" secondAttribute="bottom" constant="32" id="ecZ-1S-Pjf"/>
+                            <constraint firstItem="OkI-tG-mKR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="gOj-zw-Q9k"/>
+                            <constraint firstItem="eH7-mU-zU5" firstAttribute="top" secondItem="ae6-zv-Hme" secondAttribute="bottom" constant="265" id="w4Z-Sk-P44"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="alarmTimeDidTap" destination="UAv-MC-qHg" id="p8p-Hq-oRL"/>
+                        <outlet property="alarmTimeHeight" destination="TP2-wQ-rFr" id="Jhr-Se-Gly"/>
+                        <outlet property="alarmTimeTop" destination="3L5-uN-QGW" id="iO9-Wm-eqR"/>
+                        <outlet property="lblCurrentTime" destination="ae6-zv-Hme" id="XwO-gR-7oa"/>
+                        <outlet property="lblPickerTime" destination="OkI-tG-mKR" id="ase-NJ-whc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="UAv-MC-qHg"/>
+            </objects>
+            <point key="canvasLocation" x="-457.97101449275368" y="-37.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
